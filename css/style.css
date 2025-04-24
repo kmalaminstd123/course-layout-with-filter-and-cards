@@ -1,0 +1,227 @@
+/* card style css start */
+
+#cardViewSwitcher {
+    display: none;
+}
+.courseCard:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    transition: all linear 0.3s;
+}
+
+#cardViewSwitcher .custom-radio:nth-child(2) {
+    background-image: url('../image/twoline.png');
+}
+
+#cardViewSwitcher .custom-radio:nth-child(4) {
+    background-image: url('../image/three.png');
+}
+
+#cardViewSwitcher .custom-radio:nth-child(6) {
+    background-image: url('../image/fourline.png');
+}
+
+.custom-radio {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 0 6px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: border-color 0.2s, opacity 0.2s;
+    opacity: 0.5;
+}
+
+/* You NEED to use :checked + label — works only if label is directly after input */
+input.card-radio:checked+label.custom-radio {
+    opacity: 1;
+    border-color: #31D4CD;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    #cardViewSwitcher {
+        display: block;
+    }
+}
+
+/* course card style  */
+
+.course-card {
+    background-color: #e0f7fa;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-details-show{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.course-title{
+    color: #007bff;
+}
+
+.course-title a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.course-title a:hover {
+    color: #6610f2;
+}
+
+.course-subtitle {
+    color: #495057;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.badge-course {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 50rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 114, 255, 0.3);
+}
+
+.price-tag {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 1rem;
+}
+
+.btn-course {
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+.course-social-list a {
+    color: #495057;
+    font-size: 1.2rem;
+  }
+  
+.course-social-list a:hover {
+    color: #0d6efd;
+}
+
+.course-social-list {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+    padding-left: 20px;
+    width: fit-content;
+}
+  
+.course-card:hover .course-social-list {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.course-social-list a {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+  
+.course-card:hover .course-social-list a:nth-child(1) {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.course-card:hover .course-social-list a:nth-child(2) {
+    transition-delay: 0.4s;
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.course-card:hover .course-social-list a:nth-child(3) {
+    transition-delay: 0.6s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.course-social-list-mob{
+    display: none;
+}
+
+@media screen and (max-width: 769px){
+    .course-social-list{
+        display: none;
+    }
+
+    .course-social-list-mob{
+        display: block;
+    }
+
+    .course-social-list-mob a{
+        font-size: 20px;
+        color: rgb(73, 80, 87);
+    }
+}
+
+/* card style css end */
+
+/* filter option css start */
+
+.category-pill {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.category-pill:hover {
+    background-color: #e0f7fa;
+    color: #007B8A;
+}
+
+.category-pill.active {
+    background-color: #007B8A;
+    color: white;
+    border-color: #007B8A;
+}
+
+/* filter option css start */

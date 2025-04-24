@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- bootstrap cdn -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="container-fluid my-4">
+        <!-- <div class="mb-3">
+          <label for="cardCount" class="form-label">Choose how many cards per row:</label>
+          <select class="form-select w-auto" id="cardCount">
+            <option value="2">2 Cards per Row</option>
+            <option value="3" selected>3 Cards per Row</option>
+            <option value="4">4 Cards per Row</option>
+          </select>
+        </div> -->
+
+
+        <!-- =========== card optoins start =========== -->
+
+
+        <div class="course-cards-options mb-5">
+
+            <div class="row align-items-center border-bottom shadow-sm">
+
+                <div class="col-md-4 col-sm-12">
+                    <!-- filter option -->
+                    <div class="category-menu mb-4">
+                        <h5 class="fw-bold mb-3">Categories</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                        <a href="https://higher-edu.uk/courses" class="category-pill active">All Courses</a>
+                        <a href="https://higher-edu.uk/courses?group=18" class="category-pill">MBA</a>
+                        <a href="https://higher-edu.uk/courses?group=19" class="category-pill">Master's</a>
+                        </div>
+                    </div>
+                    
+                    <!-- filter option -->
+    
+            
+                </div>
+
+                <div class="col-md-5 col-sm-12">
+
+                  <!-- filter option -->
+                     
+                    <div class="card mt-4 border-0 rounded-3">
+
+                      <!-- <div class="card-header bg-white fw-bold fs-5 d-flex justify-content-between align-items-center">
+                        <span><i class="fa fa-filter me-2 text-primary"></i>Filter</span>
+                        <button class="btn btn-sm btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterBody">
+                          <i class="fa fa-chevron-down"></i>
+                        </button>
+                      </div> -->
+
+                      <div class="card-body collapse show" id="filterBody">
+
+                        <form id="filterform" class="row g-3" method="get" action="https://higher-edu.uk/courses">
+                          <input type="hidden" name="group" value="18" />
+                          
+                          <div class="row px-0">
+
+                            <div class="col-md-4 mb-4 mb-md-0">
+                              <!-- search input option -->
+                              <div class="row">
+                                <div class="col-12 px-0">
+                                  <!-- <label class="form-label" for="filter"><i class="fa fa-search me-2"></i>Search</label> -->
+                                  <input type="text" name="filter" class="form-control" placeholder="Type to search..." />
+                                </div>
+                              </div>
+                              <!-- search input option -->
+                            </div>
+
+                            <div class="col-md-4 mb-4 mb-md-0">
+
+                              <div class="row">
+                                <!-- sort option -->
+                                <div class="col-12">
+                                  <!-- <label class="form-label" for="sort"><i class="fa fa-sort me-2"></i>Sort</label> -->
+                                  <select name="sort" class="form-select">
+                                    <option selected value="">-- Sort --</option>
+                                    <option value="recent">Recently Added</option>
+                                    <option value="asc">A → Z</option>
+                                    <option value="desc">Z → A</option>
+                                    <option value="date">Start Date</option>
+                                    <option value="priceAsc">Price ↑</option>
+                                    <option value="priceDesc">Price ↓</option>
+                                  </select>
+                                </div>
+                                <!-- sort option -->
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+                              <!-- form buttons -->
+                              <div class="col-12 d-flex gap-2">
+                                <button type="submit" class="btn btn-primary w-100">
+                                  <i class="fa fa-search me-1"></i> <!--Filter--> 
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary w-100" onclick="clearFilterForm()">
+                                  <i class="fa fa-times me-1"></i> <!--Clear-->
+                                </button>
+                              </div>
+                              <!-- form buttons -->
+                            </div>
+
+                          </div>
+
+                        </form>
+
+                      </div>
+
+                    </div>
+
+                    <!-- filter option -->
+
+                    
+
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+
+                  <!-- card switcher -->
+                  <div class="text-center">
+                    <div id="cardViewSwitcher" class="btn-group" role="group" aria-label="Card View Switcher">
+                    <input type="radio" id="view-2" name="car-number-sel" value="2" class="card-radio" hidden>
+                    <label for="view-2" class="custom-radio"></label>
+                
+                    <input type="radio" id="view-3" name="car-number-sel" value="3" class="card-radio" hidden checked>
+                    <label for="view-3" class="custom-radio"></label>
+                
+                    <input type="radio" id="view-4" name="car-number-sel" value="4" class="card-radio" hidden>
+                    <label for="view-4" class="custom-radio"></label>
+                    </div>
+                </div>
+                <!-- card switcher -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========== card optoins end =========== -->
+
+          
+      
+        <div class="row" id="cardRow">
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 card-col mb-4 col-sm-12">
+            <div class="card course-card">
+              <div class="course-title mb-3 text-center p-4">
+                <a class="text-decoration-none" href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management">MBA in Warehouse & Distribution Management</a>
+              </div>
+              
+              <div class="course-details-show pb-3 bg-white">
+                <div class="course-subtitle p-4 text-center">
+                  Validated, Quality Assured and Degree Awarded By Renowned Universities
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center flex-wrap px-4 py-2">
+                  <span class="badge-course">Self-Paced Learning</span>
+                  <span class="price-tag">Regular: <i class="fas fa-euro-sign"></i> 1999.00</span>
+                </div>
+            
+                <div class="row g-2 p-4">
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/course-feature-detail/82" class="btn btn-outline-primary btn-course w-100" data-bs-toggle="modal" data-bs-target="#eligibleModal" onclick="eligibleView(82)">Curriculum</a>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                    <a href="https://higher-edu.uk/courses/82/mba-in-warehouse-distribution-management" class="btn btn-primary btn-course w-100">Details</a>
+                  </div>
+                </div>
+            
+                <div class="d-flex justify-content-between align-items-center p-4 flex-column">
+
+                  <div class="w-100">
+                    <a href="javascript:void(0)" class="btn w-100 btn-sm btn-info text-white mb-2 px-4" data-bs-toggle="modal" data-bs-target="#courseModal" data-course-id="82">Request Info</a>
+                  </div>
+
+                  <div class="course-social-list-mob p-3">
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                      <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                      <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="course-social-list">
+                  <a href="https://www.facebook.com/mba.france.usa"><i class="fab fa-facebook-f"></i></a>
+                  <a href="http://m.me/mba.france.usa"><i class="fab fa-facebook-messenger"></i></a>
+                  <a href="https://wa.me/message/6IKWNAND27TVM1"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+      
+
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <!-- bootstrap cdn -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="./js/main.jquery.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
