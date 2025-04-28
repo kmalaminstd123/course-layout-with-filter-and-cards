@@ -131,6 +131,11 @@ input.card-radio:checked+label.custom-radio {
     transition: all 0.3s linear;
 }
 
+.course-static-bg{
+    background-color: #2a5266;
+    color: #fff;
+}
+
 .btn-course:hover{
     background-color: #2a5266;
     color: #fff;
